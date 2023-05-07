@@ -7,11 +7,11 @@ the value of x multiplied
 by three.
 */
 
-function triple(x){
-    return (x * 3);
-}
-let multiply = triple(7);
-console.log("Triple Multiplication:", multiply); //21
+// function triple(x){
+//     return (x * 3);
+// }
+// let multiply = triple(7);
+// console.log("Triple Multiplication:", multiply); //21
 
 
 /*
@@ -21,11 +21,11 @@ takes two parameters and returns the result of
 the second value subtracted from the first.
 */
 
-function subtract(x, y){
-    return (x - y);
-}
-let result = subtract(17, 5)
-console.log("subtracted value:", result)
+// function subtract(x, y){
+//     return (x - y);
+// }
+// let result = subtract(17, 5)
+// console.log("subtracted value:", result)
 
 /*
 3)
@@ -34,12 +34,12 @@ takes three arguments and returns
 those arguments in an array.
 */
 
-let newArray = [];
-function createArray(arr1, arr2, arr3){
-   let result = newArray.push(arr1, arr2, arr3);
-    // console.log(newArray);
-    return newArray
-}
+// let newArray = [];
+// function createArray(arr1, arr2, arr3){
+//    let result = newArray.push(arr1, arr2, arr3);
+//     // console.log(newArray);
+//     return newArray
+// }
 
 // //Test case:
 // console.log(createArray(3, "a", true)); // [3, "a", true]
@@ -54,12 +54,12 @@ If the function is called with an argument that is
 not a string, it should return "Please provide a name."
 
 */
-function greetPerson(aString){
-    if(typeof aString === 'string')
-    return (`Hello, ${aString}!`);
-    else
-    return (`Please provide a name`);
-}
+// function greetPerson(aString){
+//     if(typeof aString === 'string')
+//     return (`Hello, ${aString}!`);
+//     else
+//     return (`Please provide a name`);
+// }
 
 // // Test cases:
 // console.log(greetPerson("Sofia")); // "Hello, Sofia!"
@@ -73,14 +73,14 @@ and returns the sum of all those numbers
 added together.
 
 */
-function addTogether(numArr){
-    let sum = 0;
-    for(let i=0; i<numArr.length; i++){
-         sum += numArr[i]
-        console.log(sum);          
-    }
-    return sum;
-}
+// function addTogether(numArr){
+    // let sum = 0;
+    // for(let i=0; i<numArr.length; i++){
+    //      sum += numArr[i]
+    //     console.log(sum);          
+    // }
+    // return sum;
+// }
 //Test case:
 // console.log(addTogether([1, 2, 3, 4, 5])); // 15
 
@@ -96,12 +96,12 @@ Do NOT use the array method indexOf
 in your answer. Hint: Create a loop!
 */
 
-function getIndex(arr1, val1){
+// function getIndex(arr1, val1){
 
-    let result = arr1.indexOf(val1)
-    return result;
+//     let result = arr1.indexOf(val1)
+//     return result;
     
-}
+// }
 
 // // Test cases:
 // console.log(getIndex([1, 2, 3, 4, 5, 6], 4)); // 3
@@ -123,25 +123,25 @@ console.log(includesValue([1, 2, 3, 4, 5, 6], 4)); // true
 console.log(includesValue([1, 2, 3, 4, 5, 6], 7)); // false
 */
 
-function includesValue(arr1, val1){
+// function includesValue(arr1, val1){
 
-// calling inner function before it is declared => "hoisting"
-    const result = getIndex(arr1, val1);
+// // calling inner function before it is declared => "hoisting"
+//     const result = getIndex(arr1, val1);
 
-    function getIndex(arr1, val1){
-        return arr1.indexOf(val1)
-    }
+//     function getIndex(arr1, val1){
+//         return arr1.indexOf(val1)
+//     }
    
-    if (result >= 0)
-    return true
-    else 
-    return false
+//     if (result >= 0)
+//     return true
+//     else 
+//     return false
     
-}    
+// }    
 
-// Test cases:
-console.log(includesValue([1, 2, 3, 4, 5, 6], 7)); // true
-console.log(includesValue([1, 2, 3, 4, 5, 6], 6)); // false
+// // Test cases:
+// console.log(includesValue([1, 2, 3, 4, 5, 6], 7)); // true
+// console.log(includesValue([1, 2, 3, 4, 5, 6], 6)); // false
 
 
 /*
@@ -162,6 +162,28 @@ Test case:
 console.log(createObject([3, "a", true, false, 2, true])); // { numbers: [3, 2], booleans: [true, false, true], strings: ["a"] }
 */
 
+// let result = {
+// numbers: [],
+// booleans: [],
+// strings: []
+// }
+// console.log(result);
+
+// function createObject(arr){
+
+//     for(let value of arr){
+//         if(typeof value === 'number'){
+//             result["numbers"].push(value);
+//         }else if (typeof value === "string"){
+//             result["strings"].push(value);
+//         } else if (typeof value === "boolean"){
+//             result["booleans"].push(value);
+//         } else null;
+//     }
+// }
+// console.log(createObject([3, "a", true, false, 2, true])); 
+
+// { numbers: [3, 2], booleans: [true, false, true], strings: ["a"] }
 /*
 9)
 Create a function named "removeSpaces" that
@@ -169,8 +191,14 @@ removes all spaces from a string.
 
 
 Test cases:
-console.log(removeSpaces("He went to the store.")); // "Hewenttothestore"
+console.log(removeSpaces("He went to the store.")); 
+// "Hewenttothestore"
 */
+
+//  function removeSpaces(str){
+//     let trimString = str.split(' ').join('');
+//     return trimString
+//  }
 
 /*
 10)
@@ -187,4 +215,14 @@ spaces in your string.
 Test case:
 console.log(titleCase("He went to the store.")); // "He Went To The Store"
 */
-
+function titleCase(str){
+    let arr = str.split(" ");
+    let newArr = []
+    for(let i=0; i<arr.length; i++){
+        arr[i] = arr[i].charAt(0).toUpperCase() + arr[i].slice(1)
+    }
+    console.log(arr.join(" "));
+}
+// Test case:
+console.log(titleCase("He went to the store.")); 
+// "He Went To The Store"
